@@ -17,7 +17,7 @@ function HomeScreenOngoing({ navigation }) {
 
             <View style={styles.BoxWrapStyle}>
 
-              <TouchableHighlight style={styles.Touchable} onPress={() => {navigation.navigate('Project')}}>
+              <TouchableHighlight style={styles.Touchable} onPress={() => {navigation.navigate('SignIn')}}>
                 <View style={styles.BoxStyle}>
                   <View style={styles.HeadViewStyle}>
                     <Text style={styles.HeadTextStyle}>IS Development Project</Text>
@@ -35,7 +35,7 @@ function HomeScreenOngoing({ navigation }) {
                 </View>
               </TouchableHighlight>
 
-              <TouchableHighlight style={styles.Touchable} onPress={() => {}}>
+              <TouchableHighlight style={styles.Touchable} onPress={() => {navigation.navigate('SignUp')}}>
                 <View style={styles.BoxStyle}>
                   <View style={styles.HeadViewStyle}>
                     <Text style={styles.HeadTextStyle}>Django Web Development</Text>

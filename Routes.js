@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ProgressBar from 'react-native-progress/Bar';
 
+import SignInScreen from './src/pages/Authentication/SingInScreen';
+import SignUpScreen from './src/pages/Authentication/SingUpScreen';
 import ChatScreen from './src/pages/Chat';
 import HomeScreenOngoing from './src/pages/home/OnGoing';
 import HomeScreenFinished from './src/pages/home/Finished';
@@ -15,6 +17,7 @@ import SettingsScreen from './src/pages/settings';
 import HomeScreenOngoingProject from './src/pages/home/OnGoing/Projects';
 
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import ForgetPasswardScreen from './src/pages/Authentication/ForgotPasswordScreen';
 
 
 const HomeStack = createStackNavigator();
@@ -125,6 +128,9 @@ export default function Routes() {
           ), })
           } component={MyTabs} />
         <HomeStack.Screen name="Settings" component={SettingsScreen} />
+        <HomeStack.Screen name="SignIn" component={SignInScreen}/>
+        <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
+        <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
         <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
       </HomeStack.Navigator>
     </NavigationContainer>
