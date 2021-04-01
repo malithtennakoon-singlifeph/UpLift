@@ -15,6 +15,7 @@ import ProfileReportScreen from './src/pages/Profile/Report';
 import ProfileRatingScreen from './src/pages/Profile/Ratings';
 import SettingsScreen from './src/pages/settings';
 import HomeScreenOngoingProject from './src/pages/home/OnGoing/Projects';
+import SplashScreen from './src/pages/Splash'
 
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import ForgetPasswardScreen from './src/pages/Authentication/ForgotPasswordScreen';
@@ -106,36 +107,90 @@ function MyTabs() {
     );
 }
 
+function isSignedIn(){
+  return false;
+}
 
 export default function Routes() {
-  return (
+
+    if (isSignedIn()){
+      return(
+        <NavigationContainer>
+        <HomeStack.Navigator>
+          <HomeStack.Screen 
+            name="Home" 
+            options={({ navigation, route }) => ({title: 'UpLift',
+            headerStyle:{backgroundColor:'#03DAC5', elevation:0,shadowOpacity:0},
+            headerTitleStyle:{fontWeight:'normal', fontSize:30},
+            headerRight: () => (
+            <View style={{padding:10}}>
+              <TouchableHighlight underlayColor={'#03DAC5'} onPress={() => {navigation.navigate('Settings')}}>
+              <Image
+              style={{ width: 30, height: 30, alignSelf:'center',borderRadius:50, marginTop:5, marginBottom:5 }}
+              source={require('./src/pages/Profile/img/settings.png')}
+              />
+              </TouchableHighlight>
+            </View>
+            ), })
+            } component={MyTabs} />
+          <HomeStack.Screen name="Settings" component={SettingsScreen} />
+          <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
+        </HomeStack.Navigator>
+      </NavigationContainer>
+      );
+    }  else {
+      return(
+        <NavigationContainer>
+        <HomeStack.Navigator>
+          <HomeStack.Screen name="splash" component={SplashScreen}/>
+          <HomeStack.Screen name="SignIn" component={SignInScreen}/>
+          <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
+          <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
+        </HomeStack.Navigator>
+      </NavigationContainer>
+      );
+    }
+}
+/* 
+
+return (
+  isSignedIn ? (
+
+    <NavigationContainer>
+    <HomeStack.Navigator>
+      <HomeStack.Screen 
+        name="Home" 
+        options={({ navigation, route }) => ({title: 'UpLift',
+        headerStyle:{backgroundColor:'#03DAC5', elevation:0,shadowOpacity:0},
+        headerTitleStyle:{fontWeight:'normal', fontSize:30},
+        headerRight: () => (
+        <View style={{padding:10}}>
+          <TouchableHighlight underlayColor={'#03DAC5'} onPress={() => {navigation.navigate('Settings')}}>
+          <Image
+          style={{ width: 30, height: 30, alignSelf:'center',borderRadius:50, marginTop:5, marginBottom:5 }}
+          source={require('./src/pages/Profile/img/settings.png')}
+          />
+          </TouchableHighlight>
+        </View>
+        ), })
+        } component={MyTabs} />
+      <HomeStack.Screen name="Settings" component={SettingsScreen} />
+      <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
+    </HomeStack.Navigator>
+  </NavigationContainer>
+  
+
+  ) : (
     <NavigationContainer>
       <HomeStack.Navigator>
-        <HomeStack.Screen 
-          name="Home" 
-          options={({ navigation, route }) => ({title: 'UpLift',
-          headerStyle:{backgroundColor:'#03DAC5', elevation:0,shadowOpacity:0},
-          headerTitleStyle:{fontWeight:'normal', fontSize:30},
-          headerRight: () => (
-          <View style={{padding:10}}>
-            <TouchableHighlight underlayColor={'#03DAC5'} onPress={() => {navigation.navigate('Settings')}}>
-            <Image
-            style={{ width: 30, height: 30, alignSelf:'center',borderRadius:50, marginTop:5, marginBottom:5 }}
-            source={require('./src/pages/Profile/img/settings.png')}
-            />
-            </TouchableHighlight>
-          </View>
-          ), })
-          } component={MyTabs} />
-        <HomeStack.Screen name="Settings" component={SettingsScreen} />
         <HomeStack.Screen name="SignIn" component={SignInScreen}/>
         <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
         <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
-        <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
       </HomeStack.Navigator>
     </NavigationContainer>
-  );
-}
+  )
+ */
+
 
 /* 
 import 'react-native-gesture-handler';
