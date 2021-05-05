@@ -111,9 +111,15 @@ function isSignedIn(){
   return false;
 }
 
-export default function Routes() {
+function isLoading(){
+  return false;
+}
 
-    if (isSignedIn()){
+export default function Routes() {
+  if(isLoading()){
+    return <SplashScreen/>
+  }else{
+    // if (isSignedIn()){
       return(
         <NavigationContainer>
         <HomeStack.Navigator>
@@ -138,18 +144,18 @@ export default function Routes() {
         </HomeStack.Navigator>
       </NavigationContainer>
       );
-    }  else {
-      return(
-        <NavigationContainer>
-        <HomeStack.Navigator>
-          <HomeStack.Screen name="splash" component={SplashScreen}/>
-          <HomeStack.Screen name="SignIn" component={SignInScreen}/>
-          <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
-          <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
-        </HomeStack.Navigator>
-      </NavigationContainer>
-      );
-    }
+    // }  else {
+    //   return(
+    //     <NavigationContainer>
+    //     <HomeStack.Navigator>
+    //       <HomeStack.Screen name="SignIn" component={SignInScreen}/>
+    //       <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
+    //       <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
+    //     </HomeStack.Navigator>
+    //   </NavigationContainer>
+    //   );
+    // }
+  }
 }
 /* 
 
