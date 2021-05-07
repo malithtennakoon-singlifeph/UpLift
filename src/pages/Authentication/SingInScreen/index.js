@@ -1,78 +1,33 @@
 import * as React from 'react';
-import {StyleSheet,ScrollView, View, Text } from 'react-native';
-import { WebView } from 'react-native-webview';
-import auth from '@react-native-firebase/auth';
-
-function HomeScreenOngoingProject({ navigation }) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#00B1A0' }}>
-
-      <WebView source={{ html: '<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script><link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />' }} />
-
-      </View>
-    );
-}
-
-const styles = StyleSheet.create({
-  box:{
-    flex:1,
-  },
-
-});
-
-export default HomeScreenOngoingProject;
-
-
-
-
-/* 
-<Icon
-
-
-/* import * as React from 'react';
 import { TouchableHighlight, Text, TextInput, View, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-//import AsyncStorage from '@react-native-community/async-storage';
 function SignInScreen({ navigation }) {
 
-  const [username, setUserName] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  
 
-  React.useEffect(()=>{
+ const [username, setUserName] = React.useState('');
+ const [password, setPassword] = React.useState('');
 
-  },[]);
 
   const login = ()=>  
   {
-   auth().
-   signInWithEmailAndPassword('malitharjuna@gmail.com', 'malith1998')
-   .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
+    auth().signInWithEmailAndPassword(username, password)
+    .then((userCredential) => {
 
-    // auth()
-    // .createUserWithEmailAndPassword(username, password)
-    // .then(() => {
-    //   console.log('User account created & signed in!');
-    // })
-    // .catch(error => {
-    //   if (error.code === 'auth/email-already-in-use') {
-    //     console.log('That email address is already in use!');
-    //   }
-    //   if (error.code === 'auth/invalid-email') {
-    //     console.log('That email address is invalid!');
-    //   }
+      var user = userCredential.user;
+      console.log("Signed in")
+      console.log("Authenticated successfully",user)
 
-    //   // console.error(error);
-    // }); 
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      console.error(errorCode)
+      var errorMessage = error.message;
+      console.error(errorMessage)
+    });
+
   }
 
 
@@ -127,4 +82,3 @@ const styles = StyleSheet.create({
   },
 });
 export default SignInScreen;
- */

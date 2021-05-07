@@ -1,20 +1,15 @@
 import * as React from 'react';
 import { TouchableHighlight, Text, TextInput, View, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-//import AsyncStorage from '@react-native-community/async-storage';
-function SignInScreen({ navigation }) {
+function SignInScreen({ navigation  }) {
 
   const [username, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  React.useEffect(()=>{
-
-  },[]);
-
   const login = ()=>  
   {
+
     auth()
     .createUserWithEmailAndPassword(username, password)
     .then(() => {
@@ -24,12 +19,14 @@ function SignInScreen({ navigation }) {
       if (error.code === 'auth/email-already-in-use') {
         console.log('That email address is already in use!');
       }
+  
       if (error.code === 'auth/invalid-email') {
         console.log('That email address is invalid!');
       }
+  
+      console.error(error);
+    });
 
-      // console.error(error);
-    }); 
   }
 
 

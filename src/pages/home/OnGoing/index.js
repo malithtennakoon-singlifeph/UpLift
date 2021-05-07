@@ -1,14 +1,34 @@
 
 
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreenOngoingProject from './Projects';
+import database from '@react-native-firebase/database';
 
 
 function HomeScreenOngoing({ navigation }) {
+
+  useEffect(()=>{
+    database()
+  .ref('/Users/2')
+  .set({
+    name: 'Ada Lovelace',
+    age: 31,
+  })
+  .then(() => console.log('Data set.'));
+
+
+    database()
+  .ref('/Users/1')
+  .once('value')
+  .then(snapshot => {
+    console.log('User data: ', snapshot.val());
+  });
+  },[]);
+  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#00B1A0' }}>
       <View style={{ width: '95%', height: '97%', borderRadius: 10, backgroundColor: 'white', margin: 10 }}>
