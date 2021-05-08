@@ -92,6 +92,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953432831570:android:9ded4297ffcb093af9518b",
+        "android_client_info": {
+          "package_name": "com.uplift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953432831570-qbs5kgru8b3ubrp1n3c1vuf8pm5tdu79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoKP23jxjixxBIUp4B22qDN69pM4LBvws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953432831570-qbs5kgru8b3ubrp1n3c1vuf8pm5tdu79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

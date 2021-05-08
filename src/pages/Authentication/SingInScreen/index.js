@@ -22,6 +22,23 @@ function SignInScreen({ navigation }) {
 
     })
     .catch((error) => {
+      if (error.code === 'auth/network-request-failed') {
+        console.log('Bad internet connection!');
+        alert('Bad internet connection!');
+      }
+
+      if (error.code === 'auth/user-not-found') {
+        console.log('user not found!');
+        alert('Wrong username or password');
+      }
+
+      if (error.code === 'auth/wrong-password') {
+        console.log('wrong password!');
+        alert('Wrong username or password');
+      }
+      
+
+
       var errorCode = error.code;
       console.error(errorCode)
       var errorMessage = error.message;
@@ -66,7 +83,7 @@ function SignInScreen({ navigation }) {
         
           <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10 }}>Forget Password</Text>
 
-          <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10 }}>Sing Up</Text>
+          <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10 }}>Sign Up</Text>
           
         </View>
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Up.app"
-               BlueprintName = "Up"
-               ReferencedContainer = "container:Up.xcodeproj">
+               BuildableName = "UpLift.app"
+               BlueprintName = "UpLift"
+               ReferencedContainer = "container:UpLift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "UpTests.xctest"
-               BlueprintName = "UpTests"
-               ReferencedContainer = "container:Up.xcodeproj">
+               BuildableName = "UpLiftTests.xctest"
+               BlueprintName = "UpLiftTests"
+               ReferencedContainer = "container:UpLift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Up.app"
-            BlueprintName = "Up"
-            ReferencedContainer = "container:Up.xcodeproj">
+            BuildableName = "UpLift.app"
+            BlueprintName = "UpLift"
+            ReferencedContainer = "container:UpLift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Up.app"
-            BlueprintName = "Up"
-            ReferencedContainer = "container:Up.xcodeproj">
+            BuildableName = "UpLift.app"
+            BlueprintName = "UpLift"
+            ReferencedContainer = "container:UpLift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

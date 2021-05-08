@@ -9,7 +9,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 function AuthenticationRoutes() {
-    console.log('AuthenticationRoutes')
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="SignIn">
@@ -23,4 +22,3 @@ function AuthenticationRoutes() {
 }
 
 export default AuthenticationRoutes;
-//

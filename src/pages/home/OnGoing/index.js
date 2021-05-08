@@ -1,11 +1,10 @@
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreenOngoingProject from './Projects';
+
 import database from '@react-native-firebase/database';
 
 
@@ -21,7 +20,7 @@ function HomeScreenOngoing({ navigation }) {
   .then(() => console.log('Data set.'));
 
 
-    database()
+  database()
   .ref('/Users/1')
   .once('value')
   .then(snapshot => {
