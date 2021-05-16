@@ -1,7 +1,7 @@
 
 
 import React, { useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text,Button } from 'react-native';
+import { StyleSheet, ScrollView, View, Text,Button, TouchableOpacity } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { FAB } from 'react-native-elements';
@@ -34,9 +34,15 @@ function HomeScreenOngoing({ navigation }) {
     
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#00B1A0' }}>
 
-      <View style={{ width: '95%', height: '97%', borderRadius: 10, backgroundColor: 'white', margin: 10 }}>
+      <View style={{ width: '95%', height: '97%', borderRadius: 10, backgroundColor: 'white', margin: 10, alignItems:'center' }}>
 
-        <Button title="Add" onPress={() => {navigation.navigate('AddProjects')}}/>
+        <TouchableOpacity style={{borderRadius:5 , height:35, width:'95%',marginTop:10, marginBottom:5,
+          backgroundColor:'#FFE500', justifyContent:'center',alignItems:'center'}} onPress={()=>{
+            navigation.navigate('AddProjects');
+
+          }}>
+          <Text style={{fontSize:25}}>Add</Text>
+        </TouchableOpacity>
       
         <ScrollView>
           

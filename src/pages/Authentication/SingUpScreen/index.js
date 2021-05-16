@@ -58,7 +58,7 @@ function SignInScreen({ navigation  }) {
   }
 
   function userRegistration (res) {
-    console.log("this function fucking works");
+    console.log("this function works");
     var userID=res.user.uid;
       database()
       .ref('/Users/'+userID)
