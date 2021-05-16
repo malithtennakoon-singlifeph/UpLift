@@ -11,11 +11,13 @@ import SignUpScreen from './src/pages/Authentication/SingUpScreen';
 import ChatScreen from './src/pages/Chat';
 import HomeScreenOngoing from './src/pages/home/OnGoing';
 import HomeScreenFinished from './src/pages/home/Finished';
+import AddProjects from './src/pages/home/AddProjects';
 import ProfileReportScreen from './src/pages/Profile/Report';
 import ProfileRatingScreen from './src/pages/Profile/Ratings';
 import SettingsScreen from './src/pages/settings';
 import HomeScreenOngoingProject from './src/pages/home/OnGoing/Projects';
-import SplashScreen from './src/pages/Splash'
+import SplashScreen from './src/pages/Splash';
+
 
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import ForgetPasswardScreen from './src/pages/Authentication/ForgotPasswordScreen';
@@ -148,6 +150,7 @@ export default function Routes() {
               ), })
               } component={MyTabs} />
             <HomeStack.Screen name="Settings" component={SettingsScreen} />
+            <HomeStack.Screen name="AddProjects" component={AddProjects} />
             <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
           </HomeStack.Navigator>
 

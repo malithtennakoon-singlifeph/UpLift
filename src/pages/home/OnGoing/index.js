@@ -1,37 +1,45 @@
 
 
 import React, { useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, Text,Button } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import { FAB } from 'react-native-elements';
+import { Icon } from 'react-native-elements'
 
 import database from '@react-native-firebase/database';
 
 
 function HomeScreenOngoing({ navigation }) {
 
-  useEffect(()=>{
-    database()
-  .ref('/Users/2')
-  .set({
-    name: 'Ada Lovelace',
-    age: 31,
-  })
-  .then(() => console.log('Data set.'));
+  // useEffect(()=>{
+  //   database()
+  // .ref('/Users/2')
+  // .set({
+  //   name: 'Ada Lovelace',
+  //   age: 31,
+  // })
+  // .then(() => console.log('Data set.'));
 
 
-  database()
-  .ref('/Users/1')
-  .once('value')
-  .then(snapshot => {
-    console.log('User data: ', snapshot.val());
-  });
-  },[]);
+  // database()
+  // .ref('/Users/1')
+  // .once('value')
+  // .then(snapshot => {
+  //   console.log('User data: ', snapshot.val());
+  // });
+  // },[]);
   
   return (
+    
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#00B1A0' }}>
+
       <View style={{ width: '95%', height: '97%', borderRadius: 10, backgroundColor: 'white', margin: 10 }}>
+
+        <Button title="Add" onPress={() => {navigation.navigate('AddProjects')}}/>
+      
         <ScrollView>
+          
           <View style={{ flex: 1, flexDirection: 'column', flexWrap: 'wrap', alignContent: 'space-between' }}>
 
             <View style={styles.BoxWrapStyle}>
