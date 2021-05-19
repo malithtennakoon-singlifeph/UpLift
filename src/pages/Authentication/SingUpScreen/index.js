@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { TouchableHighlight, Text, TextInput, View,ScrollView , StyleSheet } from 'react-native';
+import { TouchableHighlight,Alert, Text, TextInput, View,ScrollView , StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import { Alert } from 'react-native';
 import database from '@react-native-firebase/database';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 
 
 function SignInScreen({ navigation  }) {
@@ -116,82 +117,92 @@ function SignInScreen({ navigation  }) {
 
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: '#03DAC5' }}>
+    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white' }}>
 
       <ScrollView>
 
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: 'auto',padding:10 }}>
-          <Text style={{ fontSize: 30 }}>UpLift</Text>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',
+        borderBottomRightRadius:30, borderTopRightRadius:30,
+        marginRight:30, marginBottom:30,marginTop:30,padding:5, paddingRight:30, backgroundColor:'#FFE500'}}>
+          <Text style={{ fontSize: 30,fontWeight:'600',alignSelf: 'flex-end', }}>UpLift</Text>
         </View>
 
-        <View style={{ flex: 1, justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
+        <View style={{ flex: 1}}>
 
-          <TextInput style={styles.InputStyle} placeholder={"First Name"}
-          onChangeText={text => setUserFirstName(text)}
-          textContentType={'name'} />
+          <View style={{ justifyContent: 'center', marginLeft: '10%',borderBottomLeftRadius:30,borderTopLeftRadius:30, backgroundColor:"#FFE500"  }}>
+            <TextInput style={styles.InputStyle} placeholder={"First Name"}
+            placeholderTextColor='grey'
+            onChangeText={text => setUserFirstName(text)} />
 
-          <TextInput style={styles.InputStyle} placeholder={"Last Name"}
-          onChangeText={text => setUserFamilyName(text)}
-          textContentType={'familyName'} />
 
-          <TextInput style={styles.InputStyle} placeholder={"Address"}
-          onChangeText={text => setUserAddress(text)}
-          textContentType={'addressCityAndState'} />
 
-          <TextInput style={styles.InputStyle} placeholder={"Phone Number"}
-          onChangeText={text => setUserPhoneNumber(text)}
-          textContentType={'telephoneNumber'} 
-          keyboardType={'phone-pad'}/>
 
-          <TextInput style={styles.InputStyle} placeholder={"University"}
-          onChangeText={text => setUserUniversityName(text)}
-          textContentType={'organizationName'} />
+            <Input
+            placeholder='INPUT WITH CUSTOM ICON'
+            leftIcon={
+              <Icon
+                name='user'
+                size={24}
+                color='black'
+              />
+            }
+          />
+          
+          
+           <Input
+             placeholder="Comment"
+             leftIcon={{ type: 'font-awesome', name: 'comment' }}
+             style={styles}
+             onChangeText={value => this.setState({ comment: value })}
+            />
+          
+          
+          <Input
+            placeholder='INPUT WITH ERROR MESSAGE'
+            errorStyle={{ color: 'red' }}
+            errorMessage='ENTER A VALID ERROR HERE'
+          />
 
-          <TextInput style={styles.InputStyle} placeholder={"Faculty"}
-          onChangeText={text => setUserFacultyName(text)} />
 
-          <TextInput style={styles.InputStyle} placeholder={"Department"}
-          onChangeText={text => setUserDepartmentName(text)} />
+            <TextInput style={styles.InputStyle} placeholder={"Last Name"}
+            placeholderTextColor='grey'
+            onChangeText={text => setUserFamilyName(text)}/>
 
-          <TextInput style={styles.InputStyle} placeholder={"Batch"}
-          onChangeText={text => setUserUniBatch(text)} />
+            <TextInput style={styles.InputStyle} placeholder={"Username"}
+            placeholderTextColor='grey'
+            onChangeText={text => setUserName(text.trim())} />
 
-          <TextInput style={styles.InputStyle} placeholder={"Registration Number"}
-          onChangeText={text => setUserRegistrationNumber(text)} />
-
-          <TextInput style={styles.InputStyle} placeholder={"Username"}
-          onChangeText={text => setUserName(text.trim())}
-          textContentType={'email'} />
-
-          <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
+            <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
+              secureTextEntry={true}
+              placeholder={"Password"}
+              placeholderTextColor='grey'
+              onChangeText={text => setPassword(text)}
+            />
+            <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
             secureTextEntry={true}
-            placeholder={"Password"}
-            textContentType={'password'} 
-            onChangeText={text => setPassword(text)}
-          />
-          <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
-          secureTextEntry={true}
-          placeholder={"Re-type Password"}
-          textContentType={'password'} 
-          onChangeText={text => setRePassword(text)}
-          />
-    
-            
-          <TouchableHighlight title={'Sing In'} style={{
-            backgroundColor: '#33C4FF',
-            borderRadius: 30,
-            width: 100,
-            height: 40,
-            alignItems: 'center',
-            alignSelf: 'center',
-            justifyContent: 'center',
-            marginTop:10,
-            marginBottom:20,
-          }}
-            onPress={() => {login()}}>
-            <Text style={{ color: 'white', fontSize: 20 }}>Sign Up</Text>
-          </TouchableHighlight>
-
+            placeholder={"Re-type Password"}
+            placeholderTextColor='grey'
+            onChangeText={text => setRePassword(text)}
+            />
+          </View>
+ 
+          <View style={{marginRight:'10%', marginTop:40,padding:10, justifyContent:'center', alignContent:'center',
+                        borderBottomRightRadius:30, borderTopRightRadius:30,
+                        backgroundColor:'#FFE500'}}>
+            <TouchableHighlight title={'Sing In'} style={{
+              backgroundColor: '#33C4FF',
+              borderRadius: 30,
+              width: 100,
+              height: 40,
+              alignItems: 'center',
+              alignSelf: 'flex-end',
+              justifyContent: 'center',
+            }}
+              onPress={() => {login()}}>
+              <Text style={{ color: 'white', fontSize: 20 , fontWeight:'bold'}}>Sign Up</Text>
+            </TouchableHighlight>
+          </View>
+          
         </View>
       </ScrollView>
     </View>
@@ -200,90 +211,38 @@ function SignInScreen({ navigation  }) {
 
 const styles = StyleSheet.create({
   InputStyle: {
-    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10
+    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10,
   },
 });
 
 export default SignInScreen;
 
 
-/* 
-import * as React from 'react';
-import { TouchableHighlight, Text, TextInput, View, StyleSheet } from 'react-native';
-import auth from '@react-native-firebase/auth';
-import { NavigationContainer } from '@react-navigation/native';
 
 
-function SignInScreen({ navigation  }) {
-
-  const [username, setUserName] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  
-
-  const login = ()=>  
-  {
-
-    auth()
-    .createUserWithEmailAndPassword(username, password)
-    .then(() => {
-      console.log('User account created & signed in!');
-      console.log('user: ',user)
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
-      }
-  
-      if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
-      }
-      console.error(error);
-    });
-
-  }
 
 
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: '#03DAC5' }}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: 'auto', }}>
-        <Text style={{ fontSize: 80 }}>UpLift</Text>
-      </View>
+          // <TextInput style={styles.InputStyle} placeholder={"Address"}
+          // onChangeText={text => setUserAddress(text)}
+          // textContentType={'addressCityAndState'} />
 
-      <View style={{ flex: 1, justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-        <TextInput style={styles.InputStyle} placeholder={"Username"}
-        onChangeText={text => setUserName(text)}
-        textContentType={'username'} />
+          // <TextInput style={styles.InputStyle} placeholder={"Phone Number"}
+          // onChangeText={text => setUserPhoneNumber(text)}
+          // textContentType={'telephoneNumber'} 
+          // keyboardType={'phone-pad'}/>
 
-        <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
-          secureTextEntry={true}
-          placeholder={"Password"}
-          textContentType={'password'} 
-          onChangeText={text => setPassword(text)}
-          />
-          
-        <TouchableHighlight title={'Sing In'} style={{
-          backgroundColor: '#33C4FF',
-          borderRadius: 30,
-          width: 100,
-          height: 40,
-          alignItems: 'center',
-          alignSelf: 'center',
-          justifyContent: 'center'
-        }}
-          onPress={() => {login()}}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Sign Up</Text>
-        </TouchableHighlight>
+          // <TextInput style={styles.InputStyle} placeholder={"University"}
+          // onChangeText={text => setUserUniversityName(text)}
+          // textContentType={'organizationName'} />
 
-      </View>
-    </View>
-  );
-}
+          // <TextInput style={styles.InputStyle} placeholder={"Faculty"}
+          // onChangeText={text => setUserFacultyName(text)} />
 
-const styles = StyleSheet.create({
-  InputStyle: {
-    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10
-  },
-});
+          // <TextInput style={styles.InputStyle} placeholder={"Department"}
+          // onChangeText={text => setUserDepartmentName(text)} />
 
-export default SignInScreen;
- */
+          // <TextInput style={styles.InputStyle} placeholder={"Batch"}
+          // onChangeText={text => setUserUniBatch(text)} />
+
+          // <TextInput style={styles.InputStyle} placeholder={"Registration Number"}
+          // onChangeText={text => setUserRegistrationNumber(text)} />

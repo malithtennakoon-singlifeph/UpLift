@@ -1,60 +1,41 @@
 import * as React from 'react';
-import {StyleSheet,ScrollView, View, Text } from 'react-native';
-import ProgressBar from 'react-native-progress/Bar';
+import { View,Image, Text,TouchableHighlight } from 'react-native';
 
-function HomeScreenOngoingProject({ navigation }) {
+
+function HomeScreenOngoingProject() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#00B1A0' }}>
-        <View style={styles.box}>
-
-          <View style={{flex:1,backgroundColor:'green',alignItems:'center'}}>
-            <Text style={{fontSize:25,alignSelf:'center'}}>IS Development</Text>
-
-            <View style={{backgroundColor:'pink',flexDirection:'row',justifyContent:''}}>
-              <View style={{}}>
-                <Text>65%</Text>
-                <Text>Completed</Text>
-              </View>
-
-              <View style={{}}>
-                <Text>N/A</Text>
-                <Text>Rating</Text>
-              </View>
-            </View>
-
+      <View style={{ flex: 1, alignItems: 'center' }}>
+      <Text>Title</Text>
+        <View style={{flex:1, flexWrap:'wrap',flexDirection:'row', padding:20}}>
+          
+          <View style={{marginRight:10, alignItems:'center'}}>
+            <Text>65%</Text>
+            <Text>Completed</Text>
           </View>
-
+          <View style={{marginLeft:10, alignItems:'center'}}>
+            <Text>N/A</Text>
+            <Text>Rating {"  "}
+              <Image
+              style={{width:10, height:10}}
+              source={require('./star.png')}
+              />
+            </Text>
+          </View>
         </View>
+
+        <View style={{flex:1,flexWrap:'wrap', flexDirection:'row',}}>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'40%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+          <View style={{borderWidth:1, borderRadius:5,padding:10, width:'30%', marginLeft:'5%', marginBottom: '4%'}}><Text>Duration</Text></View>
+        </View>
+
       </View>
     );
-}
-
-// Maximum number characters of project heading should be 30 charachters. More than that would make it go 4 lines 
-
-const styles = StyleSheet.create({
-  box:{
-    flex:1,
-    backgroundColor:'white',
-    borderRadius:10,
-    padding:10,
-    marginTop:10,
-    marginBottom:10,
-    height:'auto',
-    width:'95%',
-  },
-
-});
+  }
 
 export default HomeScreenOngoingProject;
-
-
-
-
-/* 
-<Icon
-              onPress={() => {navigation.navigate('Settings')}}
-              name='add-circle'
-              color='#00B1A0'
-              size={70}
-              style={{alignSelf:'center', justifyContent:'center' }}
-              /> */

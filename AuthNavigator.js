@@ -1,9 +1,7 @@
 import React, { useState, useEffect,createContext  } from 'react';
-import { View, Text } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import Routes from './Routes.js';
 import AuthenticationRoutes from './src/pages/Authentication';
-import { EventRegister } from 'react-native-event-listeners'
 
 export const AuthContext = createContext(null)
 

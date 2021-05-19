@@ -1,8 +1,12 @@
-import React from 'react'
-import AuthNavigator from './AuthNavigator'
+import React from 'react';
+import AuthNavigator from './AuthNavigator';
 
 const App = () => {
-  return <AuthNavigator/>
+
+  return (
+      <AuthNavigator/>
+  )
+  
 }
 
 export default App

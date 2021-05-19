@@ -25,7 +25,7 @@ function ProfileReportScreen({navigation}) {
     .once('value')
     .then(snapshot => {
       var data=snapshot.val();
-      console.log('User data: ', snapshot.val());
+      //console.log('User data: ', snapshot.val());
       setUserFirstName(data.first_name);
       setUserFamilyName(data.last_name);
       setUserAddress(data.address);
@@ -44,7 +44,7 @@ function ProfileReportScreen({navigation}) {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#00B1A0' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'black' }}>
         <View style={{borderRadius:10,backgroundColor:'white',margin:10}}>
           <ScrollView style={{borderRadius:10, margin:10,padding:20}}>
             <Text style={{ fontSize:20, fontWeight:'bold'}}>UpLift </Text>

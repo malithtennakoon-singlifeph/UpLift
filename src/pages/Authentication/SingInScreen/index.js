@@ -1,70 +1,81 @@
-import * as React from 'react';
-import { TouchableHighlight, Text, TextInput, View, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {TouchableHighlight, Text, TextInput,ScrollView, View, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function SignInScreen({ navigation }) {
 
   
 
- const [username, setUserName] = React.useState('');
- const [password, setPassword] = React.useState('');
+ const [username, setUserName] = useState('');
+ const [password, setPassword] = useState('');
 
 
   const login = ()=>  
   {
-    auth().signInWithEmailAndPassword(username, password)
-    .then((userCredential) => {
+    if(username===""){
+      alert("Please Enter Username")
+    }else if(password===""){
+      alert("Please Enter Password")
+    }else{
+      auth().signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
 
-      var user = userCredential.user;
-      console.log("Signed in")
-      console.log("Authenticated successfully",user)
+        var user = userCredential.user;
+        console.log("Signed in")
+        console.log("Authenticated successfully",user)
 
-    })
-    .catch((error) => {
-      if (error.code === 'auth/network-request-failed') {
-        console.log('Bad internet connection!');
-        alert('Bad internet connection!');
-      }
+      })
+      .catch((error) => {
+        if (error.code === 'auth/network-request-failed') {
+          alert("Bad internet connection!")
+          console.log('Bad internet connection!')
+          
+        }
 
-      if (error.code === 'auth/user-not-found') {
-        console.log('user not found!');
-        alert('Wrong username or password');
-      }
+        if (error.code === 'auth/user-not-found') {
+          alert("user not found!")
+          console.log('user not found!')
+          
+        }
 
-      if (error.code === 'auth/wrong-password') {
-        console.log('wrong password!');
-        alert('Wrong username or password');
-      }
-      
+        if (error.code === 'auth/wrong-password') {
+          alert("wrong password!")
+          console.log('wrong password!')
+  
+        }
+        //console.error(error.Code)
+        //console.error(error.Message)
 
-
-      var errorCode = error.code;
-      console.error(errorCode)
-      var errorMessage = error.message;
-      console.error(errorMessage)
-    });
+      });
+    }
+    
+    
 
   }
-
+  
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: '#03DAC5' }}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: 'auto', }}>
-        <Text style={{ fontSize: 80 }}>UpLift</Text>
-      </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
+      <View style={{flex:1,backgroundColor:'white'}}>
+        <View style={{ flex: 1, justifyContent: 'center', borderRadius:30, margin:40, alignItems: 'center', backgroundColor:'#FFE500' }}>
+          <Text style={{ fontSize: 80 }}>UpLift</Text>
+        </View>
+
+        <View style={{flex:1}}>
+        
         <TextInput style={styles.InputStyle} placeholder={"Username"}
-        onChangeText={text => setUserName(text)}
-        textContentType={'username'} />
+        textAlign='center'
+        placeholderTextColor='grey'
+        onChangeText={text => setUserName(text)} />
+
 
         <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
           secureTextEntry={true}
           placeholder={"Password"}
-          textContentType={'password'} 
+          textAlign='center'
+          placeholderTextColor='grey'
           onChangeText={text => setPassword(text)}
-          />
+        />
           
         <TouchableHighlight title={'Sing In'} style={{
           backgroundColor: '#33C4FF',
@@ -73,29 +84,31 @@ function SignInScreen({ navigation }) {
           height: 40,
           alignItems: 'center',
           alignSelf: 'center',
+          margin:10,
           justifyContent: 'center'
         }}
           onPress={() => {login()}}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Sign In</Text>
+          <Text style={{ color: 'white', fontSize: 20, fontWeight:'bold' }}>Sign In</Text>
         </TouchableHighlight>
 
-        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-        
-          <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10 }}>Forget Password</Text>
-
-          <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10 }}>Sign Up</Text>
-          
+        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center',  }}>
+          <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10, fontWeight:'bold' }}>Forget Password</Text>
+          <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10, fontWeight:'bold' }}>Sign Up</Text>
         </View>
 
+
+        </View>
+
+        
       </View>
-    </View>
+
   );
 
 
 }
 const styles = StyleSheet.create({
   InputStyle: {
-    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10
+    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10,color:'black',
   },
 });
 export default SignInScreen;

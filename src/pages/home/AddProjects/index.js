@@ -21,10 +21,6 @@ function AddProjects({ navigation }) {
   let textInputMember;
   let textMem = false;
 
-  // useEffect(()=>{
-  //   setMemberArray([auth().currentUser.email]);
-  // },[]);
-
   const onChangeStart = (event, selectedDate) => {
     const currentStartDate = selectedDate;
     setStartShow(Platform.OS === 'ios');
