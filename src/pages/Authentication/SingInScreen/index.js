@@ -43,8 +43,6 @@ function SignInScreen({ navigation }) {
           console.log('wrong password!')
   
         }
-        //console.error(error.Code)
-        //console.error(error.Message)
 
       });
     }
@@ -57,44 +55,43 @@ function SignInScreen({ navigation }) {
   return (
 
       <View style={{flex:1,backgroundColor:'white'}}>
-        <View style={{ flex: 1, justifyContent: 'center', borderRadius:30, margin:40, alignItems: 'center', backgroundColor:'#FFE500' }}>
+        <View style={{ flex: 1, justifyContent: 'center', borderRadius:30, margin:40, alignItems: 'center', backgroundColor:'#88DEB0' }}>
           <Text style={{ fontSize: 80 }}>UpLift</Text>
         </View>
 
         <View style={{flex:1}}>
         
-        <TextInput style={styles.InputStyle} placeholder={"Username"}
-        textAlign='center'
-        placeholderTextColor='grey'
-        onChangeText={text => setUserName(text)} />
-
-
-        <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
-          secureTextEntry={true}
-          placeholder={"Password"}
+          <TextInput style={styles.InputStyle} placeholder={"Username"}
           textAlign='center'
           placeholderTextColor='grey'
-          onChangeText={text => setPassword(text)}
-        />
-          
-        <TouchableHighlight title={'Sing In'} style={{
-          backgroundColor: '#33C4FF',
-          borderRadius: 30,
-          width: 100,
-          height: 40,
-          alignItems: 'center',
-          alignSelf: 'center',
-          margin:10,
-          justifyContent: 'center'
-        }}
-          onPress={() => {login()}}>
-          <Text style={{ color: 'white', fontSize: 20, fontWeight:'bold' }}>Sign In</Text>
-        </TouchableHighlight>
+          onChangeText={text => setUserName(text)} />
 
-        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center',  }}>
-          <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10, fontWeight:'bold' }}>Forget Password</Text>
-          <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10, fontWeight:'bold' }}>Sign Up</Text>
-        </View>
+
+          <TextInput style={styles.InputStyle} onChangeText={(val) => console.log(val)}
+            secureTextEntry={true}
+            placeholder={"Password"}
+            textAlign='center'
+            placeholderTextColor='grey'
+            onChangeText={text => setPassword(text)} />
+            
+          <TouchableHighlight title={'Sing In'} style={{
+            backgroundColor: '#152069',
+            borderRadius: 30,
+            width: 100,
+            height: 40,
+            alignItems: 'center',
+            alignSelf: 'center',
+            margin:10,
+            justifyContent: 'center'
+          }}
+            onPress={() => {login()}}>
+            <Text style={{ color: 'white', fontSize: 20, fontWeight:'bold' }}>Sign In</Text>
+          </TouchableHighlight>
+
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center',  }}>
+            <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10, fontWeight:'bold' }}>Forget Password</Text>
+            <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10, fontWeight:'bold' }}>Sign Up</Text>
+          </View>
 
 
         </View>
@@ -108,7 +105,7 @@ function SignInScreen({ navigation }) {
 }
 const styles = StyleSheet.create({
   InputStyle: {
-    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10,color:'black',
+    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10, marginRight:30, marginLeft:30, color:'black',
   },
 });
 export default SignInScreen;

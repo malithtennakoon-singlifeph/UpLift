@@ -1,11 +1,9 @@
 
-import React, {useState, useEffect} from 'react';
-import {Button,ScrollView, View, Text ,TextInput, TouchableOpacity } from 'react-native';
-import ProgressBar from 'react-native-progress/Bar';
+import React, {useState} from 'react';
+import {ScrollView, View, Text ,TextInput, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
-import HomeScreenOngoingProject from './../OnGoing/Projects';
 
 function AddProjects({ navigation }) {
 
@@ -84,7 +82,7 @@ function AddProjects({ navigation }) {
   function ReturnMembers (){
 
       const listMembers = memberArray.map((member) =>
-      <View key={member} style={{paddingLeft:20,marginBottom:20, borderColor:'black', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
+      <View key={member} style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
       <View style={{flex:1, height:50, justifyContent:'center'}} >
         <TextInput style={{width:300}} placeholder={member}
         placeholderTextColor={"white"}/>
@@ -119,13 +117,13 @@ function AddProjects({ navigation }) {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', backgroundColor:'#00B1A0' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', backgroundColor:'#333333' }}>
       <ScrollView style={{ padding:20 , marginBottom:35, }}>
         <View style={{paddingTop:20, paddingBottom:20}}>
-          <Text style={{fontSize:30, textAlign:'center', fontWeight:'bold'}}>Create a Group Project</Text>
+          <Text style={{fontSize:30, textAlign:'center',color:'white', fontWeight:'bold'}}>Create a Group Project</Text>
         </View>
         <View  style={{paddingTop:20, paddingBottom:20}}>
-          <TextInput style={{paddingLeft:20, borderColor:'black', width:300, borderRadius:5, borderWidth:1}} 
+          <TextInput style={{paddingLeft:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1}} 
           placeholder={"Name of the Group Project"}
           placeholderTextColor={"white"}
           maxLength={30}
@@ -133,10 +131,10 @@ function AddProjects({ navigation }) {
           onChangeText={text => setgroupProjectName(text)} />
         </View>
 
-        <View style={{paddingLeft:20,marginBottom:20, borderColor:'black', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
+        <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
-            <TextInput style={{width:300}} placeholder={"Start Date"} value={startValue} 
+            <TextInput style={{width:300,}} placeholder={"Start Date"} value={startValue} 
             placeholderTextColor={"white"}
             editable={false}
             onChangeText={text => setStartDate(text)}/>
@@ -149,7 +147,7 @@ function AddProjects({ navigation }) {
           </View>
         </View>  
 
-        <View style={{paddingLeft:20,marginBottom:20, borderColor:'black', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
+        <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
             <TextInput style={{width:300}} placeholder={"End Date"} value={endValue} 
@@ -169,7 +167,7 @@ function AddProjects({ navigation }) {
         <ReturnMembers/>
 
 
-        <View style={{paddingLeft:20,marginBottom:20, borderColor:'black', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
+        <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
             <TextInput style={{width:300}} placeholder={"End Date"}

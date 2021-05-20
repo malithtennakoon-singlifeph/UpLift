@@ -59,7 +59,7 @@ export default StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center', 
-        backgroundColor: 'black',
+        backgroundColor: '#302F2F',
       },
       mmView:{
         flex:1, 

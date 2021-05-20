@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { TouchableHighlight,Alert, Text, TextInput, View,ScrollView , StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input } from 'react-native-elements';
 
 
 function SignInScreen({ navigation  }) {
@@ -123,46 +121,16 @@ function SignInScreen({ navigation  }) {
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',
         borderBottomRightRadius:30, borderTopRightRadius:30,
-        marginRight:30, marginBottom:30,marginTop:30,padding:5, paddingRight:30, backgroundColor:'#FFE500'}}>
-          <Text style={{ fontSize: 30,fontWeight:'600',alignSelf: 'flex-end', }}>UpLift</Text>
+        marginRight:'60%', marginBottom:30,marginTop:30,padding:5, paddingRight:30, backgroundColor:'#377A98'}}>
+          <Text style={{ fontSize: 30,fontWeight:'600',alignSelf: 'flex-end',color:'white' }}>UpLift</Text>
         </View>
 
         <View style={{ flex: 1}}>
 
-          <View style={{ justifyContent: 'center', marginLeft: '10%',borderBottomLeftRadius:30,borderTopLeftRadius:30, backgroundColor:"#FFE500"  }}>
+          <View style={{ justifyContent: 'center', marginLeft: '10%',borderBottomLeftRadius:30,borderTopLeftRadius:30, backgroundColor:"#88DEB0"  }}>
             <TextInput style={styles.InputStyle} placeholder={"First Name"}
             placeholderTextColor='grey'
             onChangeText={text => setUserFirstName(text)} />
-
-
-
-
-            <Input
-            placeholder='INPUT WITH CUSTOM ICON'
-            leftIcon={
-              <Icon
-                name='user'
-                size={24}
-                color='black'
-              />
-            }
-          />
-          
-          
-           <Input
-             placeholder="Comment"
-             leftIcon={{ type: 'font-awesome', name: 'comment' }}
-             style={styles}
-             onChangeText={value => this.setState({ comment: value })}
-            />
-          
-          
-          <Input
-            placeholder='INPUT WITH ERROR MESSAGE'
-            errorStyle={{ color: 'red' }}
-            errorMessage='ENTER A VALID ERROR HERE'
-          />
-
 
             <TextInput style={styles.InputStyle} placeholder={"Last Name"}
             placeholderTextColor='grey'
@@ -188,9 +156,9 @@ function SignInScreen({ navigation  }) {
  
           <View style={{marginRight:'10%', marginTop:40,padding:10, justifyContent:'center', alignContent:'center',
                         borderBottomRightRadius:30, borderTopRightRadius:30,
-                        backgroundColor:'#FFE500'}}>
+                        backgroundColor:'#377A98'}}>
             <TouchableHighlight title={'Sing In'} style={{
-              backgroundColor: '#33C4FF',
+              backgroundColor: '#152069',
               borderRadius: 30,
               width: 100,
               height: 40,
@@ -211,7 +179,7 @@ function SignInScreen({ navigation  }) {
 
 const styles = StyleSheet.create({
   InputStyle: {
-    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10,
+    borderRadius: 30, borderColor: 'gray', borderWidth: 2, padding: 10, margin: 10, color:'black'
   },
 });
 

@@ -1,14 +1,9 @@
 import React from 'react';
 import { View, Text,Button } from 'react-native';
 import database from '@react-native-firebase/database';
-import auth from '@react-native-firebase/auth';
-import { FAB } from 'react-native-elements';
-import { Icon } from 'react-native-elements'
-//import Icon from 'react-native-vector-icons/FontAwesome5';
+import {Icon, FAB } from 'react-native-elements';
 
 function ChatScreen({navigation}) {
-
-  
 
   const signOut = ()=>  
   {
@@ -23,10 +18,8 @@ function ChatScreen({navigation}) {
   }
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#00B1A0' }}>
-        <Text>Chats Screen</Text>
-
-
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#333333' }}>
+        <Text style={{color:'white'}}>Chats Screen</Text>
       
         <FAB
         placement="right"
@@ -41,8 +34,6 @@ function ChatScreen({navigation}) {
           />
         }
         />
-
-
 
         <Button
         title="Sign Out"

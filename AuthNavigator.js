@@ -1,6 +1,6 @@
 import React, { useState, useEffect,createContext  } from 'react';
 import auth from '@react-native-firebase/auth';
-import Routes from './Routes.js';
+import Routes from './src/pages/Routes';
 import AuthenticationRoutes from './src/pages/Authentication';
 
 export const AuthContext = createContext(null)
