@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {TouchableHighlight, Text, TextInput,ScrollView, View, StyleSheet } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 function SignInScreen({ navigation }) {
 
@@ -41,21 +42,16 @@ function SignInScreen({ navigation }) {
         if (error.code === 'auth/wrong-password') {
           alert("wrong password!")
           console.log('wrong password!')
-  
         }
-
       });
     }
-    
-    
-
   }
   
 
   return (
 
-      <View style={{flex:1,backgroundColor:'white'}}>
-        <View style={{ flex: 1, justifyContent: 'center', borderRadius:30, margin:40, alignItems: 'center', backgroundColor:'#88DEB0' }}>
+      <View style={{flex:1,backgroundColor:'#ffffcf'}}>
+        <View style={{ flex: 1, justifyContent: 'center', borderRadius:30, margin:40, alignItems: 'center', backgroundColor:'#fff176' }}>
           <Text style={{ fontSize: 80 }}>UpLift</Text>
         </View>
 
@@ -75,7 +71,7 @@ function SignInScreen({ navigation }) {
             onChangeText={text => setPassword(text)} />
             
           <TouchableHighlight title={'Sing In'} style={{
-            backgroundColor: '#152069',
+            backgroundColor: '#cabf45',
             borderRadius: 30,
             width: 100,
             height: 40,
@@ -85,12 +81,17 @@ function SignInScreen({ navigation }) {
             justifyContent: 'center'
           }}
             onPress={() => {login()}}>
-            <Text style={{ color: 'white', fontSize: 20, fontWeight:'bold' }}>Sign In</Text>
+            <Text style={{ color: 'black', fontSize: 20, fontWeight:'bold' }}>Sign In</Text>
           </TouchableHighlight>
 
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center',  }}>
-            <Text onPress={() => navigation.navigate('ForgetPassword')} style={{ margin: 10, fontWeight:'bold' }}>Forget Password</Text>
-            <Text onPress={() => navigation.navigate('SignUp')} style={{ margin: 10, fontWeight:'bold' }}>Sign Up</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('ForgetPassword')}>
+              <Text  style={{ margin: 20, fontWeight:'bold' }}>Forget Password</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+              <Text  style={{ margin: 20, fontWeight:'bold' }}>Sign Up</Text>
+            </TouchableOpacity>
+          
           </View>
 
 

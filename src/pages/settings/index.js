@@ -4,7 +4,7 @@ import auth from '@react-native-firebase/auth';
 
 function SettingsScreen() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#333333' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
 
         <TouchableHighlight title={'Sing In'} style={{
           backgroundColor: '#33C4FF',

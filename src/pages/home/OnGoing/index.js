@@ -5,6 +5,8 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 import database from '@react-native-firebase/database';
 import auth from '@react-native-firebase/auth';
 import styles from './style.js';
+import {Icon, FAB } from 'react-native-elements';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 function HomeScreenOngoing({ navigation }) {
 
@@ -61,9 +63,6 @@ function HomeScreenOngoing({ navigation }) {
   return (
     <View style={styles.mView}>
       <View style={styles.mmView}>
-        <TouchableOpacity style={styles.addBtn} onPress={()=>{navigation.navigate('AddProjects');}}>
-          <Text style={{fontSize:25,color:'white'}}>Add</Text>
-        </TouchableOpacity>
           
         <ScrollView>
           <View style={styles.OuterTile}>
@@ -79,9 +78,20 @@ function HomeScreenOngoing({ navigation }) {
         </ScrollView>
         
       </View>
+      <FAB placement="right" size="large" color="#fff176" onPress={()=>{navigation.navigate('AddProjects')} } 
+      icon={
+        <Icon name='address-card' size={30} type='font-awesome' color='black' />
+
+      }
+      />
     </View>
   );
 }
 // Maximum number characters of project heading should be 30 charachters. More than that would make it go 4 lines 
 
 export default HomeScreenOngoing;
+
+
+// <TouchableOpacity style={styles.addBtn} onPress={()=>{navigation.navigate('AddProjects');}}>
+// <Text style={{fontSize:25,color:'black'}}>Add</Text>
+// </TouchableOpacity>

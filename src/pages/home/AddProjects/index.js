@@ -4,6 +4,7 @@ import {ScrollView, View, Text ,TextInput, TouchableOpacity } from 'react-native
 import DateTimePicker from '@react-native-community/datetimepicker';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
+import { Icon } from 'react-native-elements';
 
 function AddProjects({ navigation }) {
 
@@ -84,12 +85,12 @@ function AddProjects({ navigation }) {
       const listMembers = memberArray.map((member) =>
       <View key={member} style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
       <View style={{flex:1, height:50, justifyContent:'center'}} >
-        <TextInput style={{width:300}} placeholder={member}
-        placeholderTextColor={"white"}/>
+        <TextInput style={{width:300, color:'black'}} placeholder={member}
+        placeholderTextColor={"grey"}/>
       </View>
       <View style={{flex:1,alignItems:'flex-end', justifyContent:'center'}}>
         <TouchableOpacity style={{width:40,height:40,borderRadius:5,marginRight:5 ,
-          backgroundColor:'#FFE500', justifyContent:'center',alignItems:'center'}} onPress={() => deleteItem(member)}>
+          backgroundColor:'#fff176', justifyContent:'center',alignItems:'center'}} onPress={() => deleteItem(member)}>
           <Text style={{fontSize:40}}>-</Text>
         </TouchableOpacity>
       </View>
@@ -117,15 +118,15 @@ function AddProjects({ navigation }) {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', backgroundColor:'#333333' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', backgroundColor:'#ffffcf' }}>
       <ScrollView style={{ padding:20 , marginBottom:35, }}>
         <View style={{paddingTop:20, paddingBottom:20}}>
-          <Text style={{fontSize:30, textAlign:'center',color:'white', fontWeight:'bold'}}>Create a Group Project</Text>
+          <Text style={{fontSize:30, textAlign:'center',color:'black', fontWeight:'bold'}}>Create a Group Project</Text>
         </View>
         <View  style={{paddingTop:20, paddingBottom:20}}>
-          <TextInput style={{paddingLeft:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1}} 
+          <TextInput style={{paddingLeft:20,color:'black', borderColor:'grey', width:300, borderRadius:5, borderWidth:1}} 
           placeholder={"Name of the Group Project"}
-          placeholderTextColor={"white"}
+          placeholderTextColor={"grey"}
           maxLength={30}
           textContentType={'username'}
           onChangeText={text => setgroupProjectName(text)} />
@@ -134,15 +135,15 @@ function AddProjects({ navigation }) {
         <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
-            <TextInput style={{width:300,}} placeholder={"Start Date"} value={startValue} 
-            placeholderTextColor={"white"}
+            <TextInput style={{width:300,color:'black'}} placeholder={"Start Date"} value={startValue} 
+            placeholderTextColor={"grey"}
             editable={false}
             onChangeText={text => setStartDate(text)}/>
           </View>
           <View style={{flex:1,alignItems:'flex-end', justifyContent:'center'}}>
             <TouchableOpacity style={{width:40,height:40,borderRadius:5,marginRight:5 ,
-              backgroundColor:'#FFE500', justifyContent:'center',alignItems:'center'}} onPress={showStartDatepicker}>
-              <Text style={{fontSize:35}}>+</Text>
+              backgroundColor:'#fff176', justifyContent:'center',alignItems:'center'}} onPress={showStartDatepicker}>
+              <Icon name='calendar-outline' type='ionicon' color='black' />
             </TouchableOpacity>
           </View>
         </View>  
@@ -150,15 +151,15 @@ function AddProjects({ navigation }) {
         <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
-            <TextInput style={{width:300}} placeholder={"End Date"} value={endValue} 
-            placeholderTextColor={"white"}
+            <TextInput style={{width:300, color:'black'}} placeholder={"End Date"} value={endValue} 
+            placeholderTextColor={"grey"}
             editable={false}
             onChangeText={text => setEndDate(text)}/>
           </View>
           <View style={{flex:1,alignItems:'flex-end', justifyContent:'center'}}>
             <TouchableOpacity style={{width:40,height:40,borderRadius:5,marginRight:5 ,
-              backgroundColor:'#FFE500', justifyContent:'center',alignItems:'center'}} onPress={showEndDatepicker}>
-              <Text style={{fontSize:35}}>+</Text>
+              backgroundColor:'#fff176', justifyContent:'center',alignItems:'center'}} onPress={showEndDatepicker}>
+              <Icon name='calendar-outline' type='ionicon' color='black' />
             </TouchableOpacity>
           </View>
         </View>
@@ -170,27 +171,24 @@ function AddProjects({ navigation }) {
         <View style={{paddingLeft:20,marginBottom:20, borderColor:'grey', width:300, borderRadius:5, borderWidth:1, flex:1, flexDirection:'row'}}>
 
           <View style={{flex:1, height:50, justifyContent:'center'}} >
-            <TextInput style={{width:300}} placeholder={"End Date"}
+            <TextInput style={{width:300,color:'black'}} placeholder={"End Date"}
             ref={(ref) => { textInputMember = ref; }}
             placeholder={"Add a Group Member"}
-            placeholderTextColor={"white"}
+            placeholderTextColor={"grey"}
             textContentType={"emailAddress"}
             onChangeText={text => setMemberEmail(text)}
             clearTextOnFocus={textMem}/>
           </View>
           <View style={{flex:1,alignItems:'flex-end', justifyContent:'center'}}>
             <TouchableOpacity style={{width:40,height:40,borderRadius:5,marginRight:5 ,
-              backgroundColor:'#FFE500', justifyContent:'center',alignItems:'center'}} onPress={()=>{
+              backgroundColor:'#fff176', justifyContent:'center',alignItems:'center'}} onPress={()=>{
                 textInputMember.clear();
                 addMember();
-
               }}>
-              <Text style={{fontSize:35}}>+</Text>
+              <Icon name='person-add-outline' type='ionicon' color='black' />
             </TouchableOpacity>
           </View>
         </View>
-
-
 
 
 
@@ -218,7 +216,7 @@ function AddProjects({ navigation }) {
       </ScrollView>
 
       <TouchableOpacity title={'Sing In'} style={{
-        backgroundColor: '#FFE500',
+        backgroundColor: '#fff176',
         borderRadius: 30,
         width: 100,
         height: 40,

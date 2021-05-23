@@ -115,19 +115,19 @@ function SignInScreen({ navigation  }) {
 
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white' }}>
+    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: '#ffffcf' }}>
 
       <ScrollView>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',
         borderBottomRightRadius:30, borderTopRightRadius:30,
-        marginRight:'60%', marginBottom:30,marginTop:30,padding:5, paddingRight:30, backgroundColor:'#377A98'}}>
-          <Text style={{ fontSize: 30,fontWeight:'600',alignSelf: 'flex-end',color:'white' }}>UpLift</Text>
+        marginRight:'60%', marginBottom:30,marginTop:30,padding:5, paddingRight:30, backgroundColor:'#fff176'}}>
+          <Text style={{ fontSize: 30,fontWeight:'600',alignSelf: 'flex-end',color:'black' }}>UpLift</Text>
         </View>
 
         <View style={{ flex: 1}}>
 
-          <View style={{ justifyContent: 'center', marginLeft: '10%',borderBottomLeftRadius:30,borderTopLeftRadius:30, backgroundColor:"#88DEB0"  }}>
+          <View style={{ justifyContent: 'center', marginLeft: '10%',borderBottomLeftRadius:30,borderTopLeftRadius:30, backgroundColor:"#cbc693"  }}>
             <TextInput style={styles.InputStyle} placeholder={"First Name"}
             placeholderTextColor='grey'
             onChangeText={text => setUserFirstName(text)} />
@@ -156,9 +156,9 @@ function SignInScreen({ navigation  }) {
  
           <View style={{marginRight:'10%', marginTop:40,padding:10, justifyContent:'center', alignContent:'center',
                         borderBottomRightRadius:30, borderTopRightRadius:30,
-                        backgroundColor:'#377A98'}}>
+                        backgroundColor:'#fff176'}}>
             <TouchableHighlight title={'Sing In'} style={{
-              backgroundColor: '#152069',
+              backgroundColor: '#cabf45',
               borderRadius: 30,
               width: 100,
               height: 40,
@@ -167,7 +167,7 @@ function SignInScreen({ navigation  }) {
               justifyContent: 'center',
             }}
               onPress={() => {login()}}>
-              <Text style={{ color: 'white', fontSize: 20 , fontWeight:'bold'}}>Sign Up</Text>
+              <Text style={{ color: 'black', fontSize: 20 , fontWeight:'bold'}}>Sign Up</Text>
             </TouchableHighlight>
           </View>
           

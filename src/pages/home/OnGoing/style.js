@@ -11,7 +11,7 @@ export default StyleSheet.create({
     Touchable: {
         flex:1,
         width:((windowWidth/100)*45),
-        height:((windowHeight/100)*21),
+        height:((windowHeight/100)*23),
         borderRadius:10,
         marginLeft:6,
       },
@@ -23,14 +23,14 @@ export default StyleSheet.create({
         paddingRight: 10,
         paddingLeft: 10,
         paddingTop: 0,
-        backgroundColor: '#333333',
+        backgroundColor: '#ffffcf',
         justifyContent: 'center',
         alignContent: 'center',
       },
       TimeText: {
         justifyContent: 'center',
         alignSelf: 'center',
-        color: 'white',
+        color: 'black',
         fontWeight: 'bold'
       },
       BoxWrapStyle: {
@@ -38,7 +38,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
       },
       HeadTextStyle: {
-        color: 'white',
+        color: 'black',
         alignSelf: 'center',
         textAlign: 'center',
         fontSize: 20,
@@ -51,7 +51,6 @@ export default StyleSheet.create({
       },
       HeadViewStyle: {
         flex: 1,
-        paddingBottom: 5,
         justifyContent: 'center',
         alignContent: 'center',
       },
@@ -59,14 +58,14 @@ export default StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center', 
-        backgroundColor: '#302F2F',
+        backgroundColor: '#ffffcf',
       },
       mmView:{
         flex:1, 
         width: '95%', 
         height: '97%', 
         borderRadius: 10, 
-        backgroundColor: 'white', 
+        backgroundColor: 'black', 
         margin: 10, 
         alignItems:'center'
       },
@@ -76,7 +75,7 @@ export default StyleSheet.create({
         width:'95%',
         marginTop:10, 
         marginBottom:5,
-        backgroundColor:'#302F2F',
+        backgroundColor:'#ffffcf',
         color:'#8F8F8F',
         justifyContent:'center',
         alignItems:'center',

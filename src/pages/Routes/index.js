@@ -7,6 +7,7 @@ import ProgressBar from 'react-native-progress/Bar';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { EventRegister } from 'react-native-event-listeners';
 import styles from './styles.js';
+import { Icon } from 'react-native-elements'
 
 import SignInScreen from '../Authentication/SingInScreen';
 import SignUpScreen from '../Authentication/SingUpScreen';
@@ -28,11 +29,11 @@ const Tab = createMaterialTopTabNavigator();
 function ProfileTabs(){
   return(
     <Tab.Navigator tabBarOptions={{
-      activeTintColor:'white',
+      activeTintColor:'black',
       inactiveTintColor:'grey',
       labelStyle: { fontSize: 18, textTransform:'capitalize', fontWeight:'normal' },
       indicatorStyle: {backgroundColor:'#FFFF8D'},
-      style: { backgroundColor: '#333333' },
+      style: { backgroundColor: '#ffffcf' },
     }}>
       <Tab.Screen name="ProfileRatingScreen" component={ProfileRatingScreen} options={{ title: 'Ratings' }}/>
       <Tab.Screen name="ProfileReportScreen" component={ProfileReportScreen} options={{ title: 'Report' }}/>
@@ -47,7 +48,7 @@ function LogoTitle() {
         style={styles.imageProfile}
         source={require('../../img/1.jpg')}
       />
-      <Text style={{ color:"white"}}>Experiance  8.1</Text>
+      <Text style={{ color:"black"}}>Experiance  8.1</Text>
       <ProgressBar style={{alignSelf:'center',marginTop:5 }} 
         color={'#03DAC5'} height={8} borderWidth={0}
         borderRadius={2} unfilledColor={'white'}
@@ -64,7 +65,7 @@ function ProfileStackScreen(){
           component={ProfileTabs}
           options={({ navigation, route }) => ({title: '',
             headerTitle: props => <LogoTitle {...props} />,
-            headerStyle:{height:150,backgroundColor:'#333333', elevation:0,shadowOpacity:0}})}
+            headerStyle:{height:150,backgroundColor:'#fff59d', elevation:0,shadowOpacity:0}})}
         />
     </ProfileStack.Navigator>
   );
@@ -73,12 +74,12 @@ function ProfileStackScreen(){
 function HomeScreenTabs(){
   return(
     <Tab.Navigator tabBarOptions={{
-      activeTintColor:'white',
+      activeTintColor:'black',
       inactiveTintColor:'#48494B',
       labelStyle: { fontSize: 18, textTransform:'capitalize', fontWeight:'normal' },
-      indicatorStyle: {backgroundColor: '#03DAC5'},
-      tabStyle: { backgroundColor: '#00B1A0', borderRadius:50,margin:5},
-      style: { backgroundColor: '#03DAC5'},
+      indicatorStyle: {backgroundColor: '#cabf45'},
+      tabStyle: { backgroundColor: '#ffffa8', borderRadius:50,margin:5},
+      style: { backgroundColor: '#fff176',elevation:0,shadowOpacity:0},
     }}>
       <Tab.Screen name="OngoinProjectsScreen" component={HomeScreenOngoing} options={{ title: 'OnGoing' }}/>
       <Tab.Screen name="FinishedProjectsScreen" component={HomeScreenFinished} options={{ title: 'Finished' }}/>
@@ -89,11 +90,11 @@ function HomeScreenTabs(){
 function MyTabs() {
     return (
       <Tab.Navigator tabBarOptions={{
-        activeTintColor:'white',
+        activeTintColor:'black',
         inactiveTintColor:'grey',
         labelStyle: { fontSize: 18, textTransform:'capitalize', fontWeight:'normal' },
-        indicatorStyle: {backgroundColor:'#FFFF8D'},
-        style: { backgroundColor: '#03DAC5' },
+        indicatorStyle: {backgroundColor:'#cabf45'},
+        style: { backgroundColor: '#fff176',elevation:0,shadowOpacity:0 },
       }}>
         <Tab.Screen name="Home" component={HomeScreenTabs} />
         <Tab.Screen name="Profile" component={ProfileStackScreen} />
@@ -124,32 +125,54 @@ export default function Routes() {
           <HomeStack.Navigator >
             <HomeStack.Screen 
               name="Home" 
-              options={({ navigation, route }) => ({title: 'UpLift',
-              headerStyle:{backgroundColor:'#03DAC5', elevation:0,shadowOpacity:0},
-              headerTitleStyle:{fontWeight:'normal', fontSize:30,color:'white'},
+              options={({ navigation }) => ({title: 'UpLift',
+              headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0},
+              headerTitleStyle:{fontWeight:'normal', fontSize:30,color:'black'},
               headerRight: () => (
               <View style={styles.home}>
-                <TouchableHighlight underlayColor={'#03DAC5'} onPress={() => {navigation.navigate('Settings')}}>
-                <Image
-                style={styles.image}
-                source={require( '../../img/settings.png')}
-                />
-                </TouchableHighlight>
+              <Icon
+              name='settings-outline'
+              type='ionicon'
+              color='black'
+              onPress={() => {navigation.navigate('Settings')}} />
               </View>
               ), })
               } component={MyTabs} />
-            <HomeStack.Screen name="Settings" component={SettingsScreen} />
-            <HomeStack.Screen name="AddProjects" component={AddProjects}  screenOptions={{ headerShown: false  }}/>
+            <HomeStack.Screen 
+            
+            options={() => ({title: 'UpLift',
+            headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0} })}
+            
+            name="Settings" component={SettingsScreen} />
+            <HomeStack.Screen
+              
+            options={() => ({title: 'UpLift',
+              headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0} })}
+              
+            
+            name="AddProjects" component={AddProjects}  screenOptions={{ headerShown: false  }}/>
             <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
           </HomeStack.Navigator>
         :  
           <HomeStack.Navigator>
-            <HomeStack.Screen name="SignIn" component={SignInScreen}/>
-            <HomeStack.Screen name="SignUp" component={SignUpScreen}/>
-            <HomeStack.Screen name="ForgetPassword" component={ForgetPasswardScreen}/>
+            <HomeStack.Screen
+            options={() => ({title: 'Welcome',
+            headerStyle:{backgroundColor:'#ffffcf', elevation:0,shadowOpacity:0} })}
+            name="SignIn" component={SignInScreen}/>
+
+            <HomeStack.Screen
+            options={() => ({title: 'SignUp',
+            headerStyle:{backgroundColor:'#ffffcf', elevation:0,shadowOpacity:0} })}
+            name="SignUp" component={SignUpScreen}/>
+
+            <HomeStack.Screen 
+            options={() => ({title: 'Forget Password',
+            headerStyle:{backgroundColor:'#ffffcf', elevation:0,shadowOpacity:0} })}
+            name="ForgetPassword" component={ForgetPasswardScreen}/>
           </HomeStack.Navigator>
         }
         </NavigationContainer>
     );
   }
 }
+//onPress={() => {navigation.navigate('Settings')}}

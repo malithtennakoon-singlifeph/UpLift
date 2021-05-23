@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements';
 function ProfileRatingScreen({navigation}) {
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#333333' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
       <ScrollView>
         <View style={{margin:10,padding:5,borderRadius:10,backgroundColor:'white',width:340}}>
           <View style={{padding:5}}>

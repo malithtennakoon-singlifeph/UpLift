@@ -7,9 +7,11 @@ import styles from './style.js';
 function HomeScreenFinished({ navigation }) {
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'black' }}>
-      <View style={{width:'95%',height:'97%',borderRadius:10,backgroundColor:'white',margin:10}}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
+
+      <View style={{width:'95%',height:'97%',borderRadius:10,backgroundColor:'black',margin:10}}>
         <ScrollView>
+
           <View style={{flex:1,flexDirection:'column',flexWrap:'wrap',alignContent:'space-between'}}>
             <View style={styles.BoxWrapStyle}>
               <View style={styles.BoxStyle}>

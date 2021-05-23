@@ -12,7 +12,7 @@ export default StyleSheet.create({
     paddingRight:10,
     paddingLeft:10,
     paddingTop:10,
-    backgroundColor:'#333333',
+    backgroundColor:'#ffffcf',
     justifyContent:'center',
     alignContent:'center',
 
@@ -20,7 +20,7 @@ export default StyleSheet.create({
   TimeText:{
     justifyContent:'center',
     alignSelf:'center',
-    color:'white',
+    color:'black',
     fontWeight:'bold'
   },
   BoxWrapStyle:{
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     flexDirection:'row'
   },
   HeadTextStyle:{
-    color:'white',
+    color:'black',
     alignSelf:'center',
     textAlign:'center',
     fontSize:20,

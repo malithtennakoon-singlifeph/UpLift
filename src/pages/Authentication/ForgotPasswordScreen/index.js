@@ -37,7 +37,7 @@ function ForgetPasswardScreen({ navigation }) {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'white' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
 
     <TextInput style={{borderRadius: 30, width:'80%', borderColor: 'gray', marginBottom:50,
                        color:'black',
@@ -49,7 +49,7 @@ function ForgetPasswardScreen({ navigation }) {
     
     <View>
       <TouchableOpacity style={{
-        backgroundColor:'#33C4FF',
+        backgroundColor:'#cbc693',
         height:150,
         width:150,
         borderRadius:100,
