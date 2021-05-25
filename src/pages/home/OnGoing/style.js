@@ -67,6 +67,7 @@ export default StyleSheet.create({
         borderRadius: 10, 
         backgroundColor: 'black', 
         margin: 10, 
+        paddingTop:5,
         alignItems:'center'
       },
       addBtn:{

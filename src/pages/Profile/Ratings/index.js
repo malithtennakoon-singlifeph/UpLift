@@ -5,9 +5,9 @@ import { Icon } from 'react-native-elements';
 function ProfileRatingScreen({navigation}) {
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'black' }}>
       <ScrollView>
-        <View style={{margin:10,padding:5,borderRadius:10,backgroundColor:'white',width:340}}>
+        <View style={{margin:10,padding:5,borderRadius:10,backgroundColor:'#ffffcf',width:340}}>
           <View style={{padding:5}}>
             <Text>No of Projects: 12</Text>
             <Text>No of Members you have worked with: 36</Text>
@@ -16,7 +16,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Communication Skills </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -24,7 +24,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Motivation of memebers </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -32,7 +32,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Delegation </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -40,7 +40,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Timeliness </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -48,7 +48,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Creativity </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -57,7 +57,7 @@ function ProfileRatingScreen({navigation}) {
         </View>
 
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Responsibility </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -65,7 +65,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Activeness </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>
@@ -73,7 +73,7 @@ function ProfileRatingScreen({navigation}) {
           </View>
         </View>
 
-        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'white',height:35,width:340}}>
+        <View style={{flex:1,flexDirection:'row',margin:10,padding:10,justifyContent:'space-between',borderRadius:10,backgroundColor:'#ffffcf',height:35,width:340}}>
           <View style={{justifyContent:'center'}}><Text style={{}}>Communication Skills </Text></View>
           <View style={{flexDirection:'row'}}>
             <View style={{justifyContent:'center'}}><Image style={styles.image} source={require('./img/star.png')}/></View>

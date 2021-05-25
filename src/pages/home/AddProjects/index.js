@@ -8,6 +8,7 @@ import { Icon } from 'react-native-elements';
 
 function AddProjects({ navigation }) {
 
+
   const [groupProjectName, setgroupProjectName] = React.useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [startShow, setStartShow] = useState(false);

@@ -9,7 +9,7 @@ function HomeScreenFinished({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
 
-      <View style={{width:'95%',height:'97%',borderRadius:10,backgroundColor:'black',margin:10}}>
+      <View style={{width:'95%',height:'97%',borderRadius:10,backgroundColor:'black', padding:5,margin:10}}>
         <ScrollView>
 
           <View style={{flex:1,flexDirection:'column',flexWrap:'wrap',alignContent:'space-between'}}>
@@ -20,7 +20,7 @@ function HomeScreenFinished({ navigation }) {
                 </View>
                 <View style={{flex:1}}>
                   <ProgressBar style={styles.ProgressBarStyle} 
-                    color={'#03DAC5'} height={12} borderWidth={0}
+                    color={'#c8b900'} height={12} borderWidth={0}
                     borderRadius={10} unfilledColor={'white'}
                     progress={0.6} width={130} />
                   <View style={{paddingTop:10}}>
@@ -35,7 +35,7 @@ function HomeScreenFinished({ navigation }) {
                 </View>
                 <View style={{flex:1}}>
                   <ProgressBar style={styles.ProgressBarStyle} 
-                    color={'#03DAC5'} height={12} borderWidth={0}
+                    color={'#c8b900'} height={12} borderWidth={0}
                     borderRadius={10} unfilledColor={'white'}
                     progress={1} width={130} />
                   <View style={{paddingTop:10}}>
@@ -52,7 +52,7 @@ function HomeScreenFinished({ navigation }) {
                 </View>
                 <View style={{flex:1}}>
                   <ProgressBar style={styles.ProgressBarStyle} 
-                    color={'#03DAC5'} height={12} borderWidth={0}
+                    color={'#c8b900'} height={12} borderWidth={0}
                     borderRadius={10} unfilledColor={'white'}
                     progress={0.8} width={130} />
                   <View style={{paddingTop:10}}>
@@ -67,7 +67,7 @@ function HomeScreenFinished({ navigation }) {
                 </View>
                 <View style={{flex:1}}>
                   <ProgressBar style={styles.ProgressBarStyle} 
-                    color={'#03DAC5'} height={12} borderWidth={0}
+                    color={'#c8b900'} height={12} borderWidth={0}
                     borderRadius={10} unfilledColor={'white'}
                     progress={0.8} width={130} />
                   <View style={{paddingTop:10}}>

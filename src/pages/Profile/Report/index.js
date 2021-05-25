@@ -44,8 +44,8 @@ function ProfileReportScreen({navigation}) {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
-        <View style={{borderRadius:10,backgroundColor:'white',margin:10}}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'black' }}>
+        <View style={{borderRadius:10,backgroundColor:'#ffffcf',margin:10}}>
           <ScrollView style={{borderRadius:10, margin:10,padding:20}}>
             <Text style={{ fontSize:20, fontWeight:'bold'}}>UpLift </Text>
             <Text style={{ textDecorationLine:'underline'}}>Evaluation Report</Text>

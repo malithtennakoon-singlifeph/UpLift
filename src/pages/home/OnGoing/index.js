@@ -34,19 +34,25 @@ function HomeScreenOngoing({ navigation }) {
   },[]);
 
   const renderItem = ({ item }) => (
-    <Tile groupProjectName={item.project_name} startDate={item.project_start_date} endDate={item.project_end_date}/>
+    <Tile groupProjectName={item.project_name} startDate={item.project_start_date} endDate={item.project_end_date}
+    projectMembers={item.project_members} projectAdmin={item.project_admin} projectStatus={item.project_status}
+    />
   );
 
   const Tile = (props) =>{
+    console.log("whats: -",props.groupProjectName)
     return(
-      <TouchableHighlight key={props.project_name} style={styles.Touchable} onPress={() => {navigation.navigate('Project')}}>
+      <TouchableHighlight key={props.project_name} style={styles.Touchable} onPress={() => {navigation.navigate('Project',{ 
+        projectName:props.groupProjectName, startDate:props.startDate, endDate:props.endDate, projectMembers:props.projectMembers,
+        projectAdmin:props.projectAdmin,projectStatus:props.projectStatus 
+      })}}>
         <View style={styles.BoxStyle}>
           <View style={styles.HeadViewStyle}>
             <Text style={styles.HeadTextStyle}>{props.groupProjectName}</Text>
           </View>
           <View style={{ flex: 1 }}>
             <ProgressBar style={styles.ProgressBarStyle}
-              color={'#03DAC5'} height={12} borderWidth={0}
+              color={'#c8b900'} height={12} borderWidth={0}
               borderRadius={10} unfilledColor={'white'}
               progress={projectProgress} width={130} />
             <View style={{ paddingTop: 10 }}>
