@@ -5,8 +5,6 @@ const windowHeight = Dimensions.get('window').height;
 
 export default StyleSheet.create({
     OuterTile:{
-        flexDirection: 'row',
-        flexWrap: "wrap",
     },
     Touchable: {
         flex:1,

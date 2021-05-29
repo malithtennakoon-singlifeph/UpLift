@@ -5,11 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ProgressBar from 'react-native-progress/Bar';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 import { EventRegister } from 'react-native-event-listeners';
 import styles from './styles.js';
 import { Icon } from 'react-native-elements'
-import auth from '@react-native-firebase/auth';
 
 import SignInScreen from '../Authentication/SingInScreen';
 import SignUpScreen from '../Authentication/SingUpScreen';
@@ -24,6 +22,7 @@ import HomeScreenOngoingProject from '../home/OnGoing/Projects';
 import SplashScreen from '../Splash';
 import ForgetPasswardScreen from '../Authentication/ForgotPasswordScreen';
 import CustomDrawer from '../DrawerScreen';
+import RateScreen from '../Rate';
 
 const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
@@ -111,24 +110,26 @@ function MyTabs(){
   return(
     <HomeStack.Navigator>
 
-    <HomeStack.Screen name="Home" component={MainTabs} 
-    options={({ navigation }) => ({title: 'UpLift',
-        headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0},
-        headerTitleStyle:{fontWeight:'normal', fontSize:30,color:'black'},
-        headerLeft: () => (
-        <View style={styles.home}>
-        <Icon style={{marginLeft:10}} name="menu" 
-        size={40} color="black" 
-        onPress={()=>{navigation.dispatch(DrawerActions.openDrawer())}} />
-        </View>
-        ),
-    })}
-    />
+      <HomeStack.Screen name="Home" component={MainTabs} 
+      options={({ navigation }) => ({title: 'UpLift',
+          headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0},
+          headerTitleStyle:{fontWeight:'normal', fontSize:30,color:'black'},
+          headerLeft: () => (
+          <View style={styles.home}>
+          <Icon style={{marginLeft:10}} name="menu" 
+          size={40} color="black" 
+          onPress={()=>{navigation.dispatch(DrawerActions.openDrawer())}} />
+          </View>
+          ),
+      })}
+      />
+
       <HomeStack.Screen name="Settings" component={SettingsScreen} />
       <HomeStack.Screen name="AddProjects" component={AddProjects}
         options={() => ({title: 'UpLift',
         headerShown: false,
         headerStyle:{backgroundColor:'#fff176', elevation:0,shadowOpacity:0} })}/>
+      <HomeStack.Screen name="Rate" component={RateScreen} />
       <HomeStack.Screen name="Project" component={HomeScreenOngoingProject} />
   </HomeStack.Navigator>
   )
