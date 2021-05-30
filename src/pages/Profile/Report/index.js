@@ -20,23 +20,23 @@ function ProfileReportScreen({navigation}) {
   useEffect(()=>{
     
 
-    database()
-    .ref('/Users/'+userId)
-    .once('value')
-    .then(snapshot => {
-      var data=snapshot.val();
-      //console.log('User data: ', snapshot.val());
-      setUserFirstName(data.first_name);
-      setUserFamilyName(data.last_name);
-      setUserAddress(data.address);
-      setUserEmail(data.email);
-      setUserPhoneNumber(data.phone_number);
-      setUserUniversityName(data.university);
-      setUserFacultyName(data.faculty);
-      setUserDepartmentName(data.department);
-      setUserUniBatch(data.batch);
-      setUserRegistrationNumber(data.Registration_number);
-    });
+    // database()
+    // .ref('/Users/'+userId)
+    // .once('value')
+    // .then(snapshot => {
+    //   var data=snapshot.val();
+    //   //console.log('User data: ', snapshot.val());
+    //   setUserFirstName(data.first_name);
+    //   setUserFamilyName(data.last_name);
+    //   setUserAddress(data.address);
+    //   setUserEmail(data.email);
+    //   setUserPhoneNumber(data.phone_number);
+    //   setUserUniversityName(data.university);
+    //   setUserFacultyName(data.faculty);
+    //   setUserDepartmentName(data.department);
+    //   setUserUniBatch(data.batch);
+    //   setUserRegistrationNumber(data.Registration_number);
+    // });
 
 
 

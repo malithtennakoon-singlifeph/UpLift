@@ -14,7 +14,7 @@ function HomeScreenOngoingProject({route, navigation}) {
   let checkRate='info';
 
   const renderItem = ({ item }) => (
-    <Members name={item} />
+    <Members name={item.trim('')} />
   );
 
   function existance(memName){
