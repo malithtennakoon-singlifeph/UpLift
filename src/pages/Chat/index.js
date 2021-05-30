@@ -1,32 +1,44 @@
-import React from 'react';
-import { View, Text,Button } from 'react-native';
-import database from '@react-native-firebase/database';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React, {useState} from 'react';
+import { View, Text, TouchableHighlight,ScrollView,  } from 'react-native';
+import {Button, } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+
+
 
 function ChatScreen({navigation}) {
 
-  const signOut = ()=>  
-  {
-    database()
-          .ref('/Users/3')
-          .set({
-            first_name: 'userFirstName',
-            last_name: 'userFamilyName',
-            address: 'userAddress',
-          })
-          .then(() => console.log('User is registered in firebase'));
+  const [arr, setArr] = useState()
+
+  const getData = ()=> {
+    firestore()
+    .collection('Ratings')
+    .get()
+    .then(documentSnapshot => {
+      console.log('User Ratings exists: ', documentSnapshot.data());
+      
+    });
+
   }
 
     return (
-      <SafeAreaProvider style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#ffffcf' }}>
-        <Text style={{color:'black'}}>Chats Screen</Text>
-    
-
-        <Button
-        title="Sign Out"
-        onPress={signOut}
-      />
-      </SafeAreaProvider>
+      <View style={{flex:1}}>
+        <View style={{flex:9}}>
+          <ScrollView>
+          </ScrollView>
+        </View>
+        <View style={{flex:1, alignItems:'center',justifyContent:'center'}}>
+        <Button buttonStyle={{width:90,borderRadius:5, backgroundColor:'#cabf45',}} titleStyle={{color:'black'}}
+          icon={<Icon 
+            name='sync'
+            //{existance(name) }
+            type='ionicon' size={20} color="black"/>}
+          title="  Sync"
+          onPress={()=>{getData()}}
+        />
+        </View>
+      </View>
     );
   }
 

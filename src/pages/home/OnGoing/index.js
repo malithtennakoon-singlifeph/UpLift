@@ -37,10 +37,10 @@ function HomeScreenOngoing({ navigation }) {
         docSnapshot.docs.forEach(doc =>{
           if (doc.data().project_members.includes(currentUserEmail)){
             setDataToArr(doc.data())
-            console.log("updated")
+            console.log("updated from firebase")
               //setMemberArray(oldArray => [...oldArray,doc.data()]);
             }else{
-              console.log("Naaaa",doc.data().project_name);
+              console.log("User is not a member: -",doc.data().project_name);
             }
       }) 
       setState()
@@ -97,8 +97,7 @@ function HomeScreenOngoing({ navigation }) {
   );
 
   const Tile = (props) =>{
-    console.log("whats: -",props.groupProjectName)
-    console.log('member array:', memberArray)
+    console.log("Ongoing Project: -",props.groupProjectName)
     return(
       <TouchableHighlight key={props.project_id} style={styles.Touchable} onPress={() => {navigation.navigate('Project',{ 
         projectName:props.groupProjectName, startDate:props.startDate, endDate:props.endDate, projectMembers:props.projectMembers,

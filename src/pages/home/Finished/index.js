@@ -57,8 +57,7 @@ function HomeScreenFinished({ navigation }) {
   );
 
   const Tile = (props) =>{
-    console.log("whats: -",props.groupProjectName)
-    console.log('member array:', memberArray)
+    console.log("Finished Project: -",props.groupProjectName)
     return(
       <TouchableHighlight key={props.project_id} style={styles.Touchable} onPress={() => {navigation.navigate('Project',{ 
         projectName:props.groupProjectName, startDate:props.startDate, endDate:props.endDate, projectMembers:props.projectMembers,
